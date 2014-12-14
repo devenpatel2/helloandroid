@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_helloworld" default="compile.module.helloworld">
+  <dirname property="module.helloworld.basedir" file="${ant.file.module_helloworld}"/>
+  
+  <property name="module.jdk.home.helloworld" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.helloworld" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.helloworld" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.helloworld" value="-encoding UTF-8 -source 1.6 ${compiler.args}"/>
+  
+  <property name="helloworld.output.dir" value="undefined"/>
+  <property name="helloworld.testoutput.dir" value="undefined"/>
+  
+  <path id="helloworld.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="helloworld.module.production.classpath">
+    <path refid="${module.jdk.classpath.helloworld}"/>
+  </path>
+  
+  <path id="helloworld.runtime.production.module.classpath"/>
+  
+  <path id="helloworld.module.classpath">
+    <path refid="${module.jdk.classpath.helloworld}"/>
+  </path>
+  
+  <path id="helloworld.runtime.module.classpath"/>
+  
+  
+  <patternset id="excluded.from.module.helloworld">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.helloworld">
+    <patternset refid="excluded.from.module.helloworld"/>
+  </patternset>
+  
+  
+  <target name="compile.module.helloworld" depends="compile.module.helloworld.production,compile.module.helloworld.tests" description="Compile module HelloWorld"/>
+  
+  <target name="compile.module.helloworld.production" depends="register.custom.compilers" description="Compile module HelloWorld; production classes"/>
+  
+  <target name="compile.module.helloworld.tests" depends="register.custom.compilers,compile.module.helloworld.production" description="compile module HelloWorld; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.helloworld" description="cleanup module">
+    <delete dir="${helloworld.output.dir}"/>
+    <delete dir="${helloworld.testoutput.dir}"/>
+  </target>
+</project>
