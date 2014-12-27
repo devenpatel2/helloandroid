@@ -3,6 +3,7 @@
 /home/lumos/CV/Android/HelloWorld/res/drawable-xhdpi/ic_launcher.png \
 /home/lumos/CV/Android/HelloWorld/res/layout/linear.xml \
 /home/lumos/CV/Android/HelloWorld/res/layout/cam_main.xml \
+/home/lumos/CV/Android/HelloWorld/res/layout/cam_api.xml \
 /home/lumos/CV/Android/HelloWorld/res/layout/main.xml \
 /home/lumos/CV/Android/HelloWorld/res/layout/relative.xml \
 /home/lumos/CV/Android/HelloWorld/res/drawable-mdpi/ic_launcher.png \

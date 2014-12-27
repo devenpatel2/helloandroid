@@ -14,5 +14,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".CamApi"
+            android:label="@string/camapi"
+             android:screenOrientation="portrait"
+             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <meta-data
+                 android:name="android.support.PARENT_ACTIVITY" 
+                android:value="com.example.helloworld.MyActivity" />
+        </activity>
     </application>
+
 </manifest>

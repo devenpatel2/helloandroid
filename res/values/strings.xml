@@ -11,4 +11,5 @@
     <string name="done">Done</string>
     <string name="api">Api</string>
     <string name="intent">Intent</string>
+    <string name="camapi">Cam Api</string>
 </resources>

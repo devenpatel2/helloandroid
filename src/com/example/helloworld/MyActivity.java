@@ -32,11 +32,14 @@ public class MyActivity extends Activity
    }
     
     public void camAPI(View view){
-        cameraObject = isCameraAvailiable();
+        
+        Intent intent= new Intent(this,CamApi.class);
+        startActivity(intent);
+        /*  cameraObject = isCameraAvailiable();
         showCamera = new ShowCamera(this, cameraObject);
         FrameLayout preview = (FrameLayout) findViewById(R.id.camera_preview);
         preview.addView(showCamera);
-         
+        */ 
     }
  
     public static Camera isCameraAvailiable(){
@@ -45,6 +48,8 @@ public class MyActivity extends Activity
             object = Camera.open(); 
         }
         catch (Exception e){
+             if(object !=null)
+            object.release();
         }
         return object; 
    }
